@@ -2631,7 +2631,9 @@ function renderUserDetail(userId){
 // ═══════════════════════════════════════
 //  GOOGLE APPS SCRIPT INTEGRATION
 // ═══════════════════════════════════════
-function getGASUrl(){return localStorage.getItem('sv2_gas_url')||''}
+const DEFAULT_GAS_URL='https://script.google.com/macros/s/AKfycbz_wjk7T97YNE1IU0BDoYyFmL1Js1qTf9suwRbocCr0ylq4DtNc9qQaeJYwvFOI3hUS/exec';
+function getGASUrl(){return localStorage.getItem('sv2_gas_url')||DEFAULT_GAS_URL}
+function saveGASUrl(url){localStorage.setItem('sv2_gas_url',url)}
 function openGASSettings(){
   document.getElementById('gas-url-input').value=getGASUrl();
   const st=document.getElementById('gas-status-msg');st.style.display='none';
